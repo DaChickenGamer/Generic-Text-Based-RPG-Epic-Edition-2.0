@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Enemies
 {
-    internal class TestEnemy : Enemy
+    internal class Dummy : Enemy
     {
         public override int EnemyID { get; set; } = 1;
-        public override string Name { get; set; } = "TestEnemy";
-        public override int Health { get; set; } = 20;
+        public override string Name { get; set; } = "Dummy";
+        public override int Health { get; set; } = 5;
         public override int Damage { get; set; } = 1;
         public override int CoinDrop { get; set; } = Rand.Next(3, 5);
         

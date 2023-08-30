@@ -6,10 +6,10 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
     internal class Tutorial : DialogueSettings
     {
         public static bool statsUnlocked = false;
+        public static bool tutorial = false;
         public static void Start()
         {
             BeginningQuestions();
-            bool tutorial = true; // Put @ the last bit of dialouge
         }
         internal static void BeginningQuestions()
         {
@@ -30,9 +30,18 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
             // Getting the player name
             if (name == "")
             {
-                Console.WriteLine("???: Quite a name!");
+                Console.WriteLine("\n???: Quite a name!");
                 DialogueSettings.Clear();
                 Console.WriteLine("You died in your world.");
+            }
+            else if (name == "raymond" || name == "Raymond")
+            {
+                Console.WriteLine("\nYou feel slightly more powerful!"); // Make it give a small boost
+            }
+            else if (name == "The True God")
+            {
+                Console.WriteLine("\nI see now you're the true god.");
+                Console.WriteLine("Take my powers!");
             }
             else
             {
@@ -110,7 +119,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
         internal static void StarterGuide(bool metGod)
         {
             Encounters encounters = new Encounters();
-            TestEnemy testEnemy = new TestEnemy();
+            Dummy dummy = new Dummy();
             if (metGod == true)
             {
                 DialogueSettings.GodColorChange();
@@ -124,8 +133,36 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
                 DialogueSettings.GodColorChange();
                 Console.WriteLine("Here fight this dummy here to learn how to fight.");
                 DialogueSettings.Clear();
-                testEnemy.StartBattle();
+                dummy.StartBattle();
+                DialogueSettings.GodColorChange();
+                Console.WriteLine("You're finally done with the enemy, took you long enough!");
                 DialogueSettings.Clear();
+                if (Program.CurrentPlayer.health == 100)
+                {
+                    DialogueSettings.GodColorChange();
+                    Console.WriteLine("You really did that without taking any damage impressive.");
+                    DialogueSettings.Clear();
+                }
+                else
+                {
+                    DialogueSettings.GodColorChange();
+                    Console.WriteLine("Dang, you took a lot of damage. Here take this.");
+                    DialogueSettings.Clear();
+                    Console.WriteLine("*You feel warm feeling flow throughout your body*");
+                    DialogueSettings.Clear();
+                    DialogueSettings.GodColorChange();
+                    Program.CurrentPlayer.health = 100;
+                    Console.WriteLine("I gave you some health back. If you do this bad out there you'll die");
+                    DialogueSettings.Clear();
+                }
+                DialogueSettings.GodColorChange();
+                Console.WriteLine("Now kid! Are you ready?");
+                DialogueSettings.Clear();
+                DialogueSettings.GodColorChange();
+                Console.WriteLine("Well it doesn't matter. Good luck! You'll need it.");
+                DialogueSettings.Clear();
+                Console.WriteLine("*You suddenly wake up in the middle of a grassy field*");
+                tutorial = true;
             }
             else
             {
@@ -137,8 +174,32 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
                 DialogueSettings.Clear();
                 Console.WriteLine("???: Here fight this dummy here to learn how to fight.");
                 DialogueSettings.Clear();
-                testEnemy.StartBattle();
+                dummy.StartBattle();
+                Console.WriteLine("???: You're finally done with the enemy, took you long enough!");
+                DialogueSettings.Clear();
+                if (Program.CurrentPlayer.health == 100)
+                {
+                    Console.WriteLine("???: You really did that without taking any damage impressive.");
+                    DialogueSettings.Clear();
+                }
+                else
+                {
+                    Console.WriteLine("???: Dang, you took a lot of damage. Here take this.");
+                    DialogueSettings.Clear();
+                    Console.WriteLine("*You feel warm feeling flow throughout your body*");
+                    DialogueSettings.Clear();
+                    Program.CurrentPlayer.health = 100;
+                    Console.WriteLine("???: I gave you some health back. If you do this bad out there you'll die");
+                    DialogueSettings.Clear();
+                }
+                Console.WriteLine("???: Now kid! Are you ready?");
+                DialogueSettings.Clear();
+                Console.WriteLine("???: Well it doesn't matter. Good luck! You'll need it.");
+                DialogueSettings.Clear();
+                Console.WriteLine("*You suddenly wake up in the middle of a grassy field*");
+                tutorial = true;
             }
+            FindingATown.Start();
         }
     }
 }

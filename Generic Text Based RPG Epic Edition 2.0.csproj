@@ -44,16 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dialogue\DialogueSettings.cs" />
+    <Compile Include="Dialogue\FindingATown.cs" />
     <Compile Include="Dialogue\Tutorial.cs" />
     <Compile Include="Encounters.cs" />
     <Compile Include="Enemies\Enemy.cs" />
-    <Compile Include="Enemies\TestEnemy.cs" />
+    <Compile Include="Enemies\Dummy.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Towns\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

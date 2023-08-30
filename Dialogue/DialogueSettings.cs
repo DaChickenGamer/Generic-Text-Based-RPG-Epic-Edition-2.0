@@ -12,9 +12,8 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
         private static bool knowHeaven = false; // Decides the background
         public static void Clear()
         {
-            Player player = new Player();
             if (showStats == true)
-                player.DisplayInfo();
+                Program.CurrentPlayer.DisplayInfo();
             Console.WriteLine("\n(PRESS ANY BUTTON TO COUNTINE)");
             Console.ReadKey();
             Console.Clear();

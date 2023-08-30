@@ -6,20 +6,19 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
     internal class Program
     {
         public static Enemy CurrentEnemy { get; set; }
-        public static Player CurrentPlayer { get; set; }
+        public static Player CurrentPlayer { get; set; } = new Player();
         static void Main(string[] args)
         {
-            bool tutorial = false;
+            bool tutorial = Tutorial.tutorial;
 
-            if (tutorial == false)
+            if (Tutorial.tutorial == false)
             {
-                //Player
                 Tutorial.Start();
             }
-            /*else
+            else
             {
-                Countinue();
-            }*/
+                FindingATown.Start();
+            }
         }
     }
 }
