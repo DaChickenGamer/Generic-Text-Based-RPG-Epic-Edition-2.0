@@ -13,11 +13,12 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
         public void FightStats(Enemy enemy)
         {
            CurrentEnemy = enemy;
-           if (enemy != null)
+           int currentMove = 0;
+
+            if (enemy != null)
             {
                 while (enemy.Health > 0)
                 {
-                    int currentMove = 1;
                     currentMove++;
 
                     Console.WriteLine("Current Move: " + currentMove);
@@ -47,6 +48,10 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
 
                     DialogueSettings.showStats = true;
                 }
+            }
+            else
+            {
+                currentMove = 0;
             }
         }
         public void Attack(Enemy enemy)

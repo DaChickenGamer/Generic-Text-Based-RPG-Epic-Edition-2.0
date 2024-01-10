@@ -1,15 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using Generic_Text_Based_RPG_Epic_Edition_2._0.Items;
 
 namespace Generic_Text_Based_RPG_Epic_Edition_2._0
 {
+
     internal class Player
     {
-    public int maxHealth { get; set; } = 100; // Base health is 100
-    public int health { get; set; } = 100; // Starts at 100
-    public int defense { get; set; } = 1;
-    public int coins { get; set; } = 0;
-    public int damage { get; set; } = 1;
-    public double multiplyer { get; set; } = 1.0;
+        public int maxHealth { get; set; } = 100; // Base health is 100
+        public int health { get; set; } = 100; // Starts at 100
+        public int defense { get; set; } = 1;
+        public int coins { get; set; } = 0;
+        public int damage { get; set; } = 1;
+        public double multiplyer { get; set; } = 1.0;
+        public void HealthCheck()
+        {
+            if (health <= maxHealth)
+                return;
+            health = maxHealth;
+        }
         public void Death()
         {
             if (health <= 0)
