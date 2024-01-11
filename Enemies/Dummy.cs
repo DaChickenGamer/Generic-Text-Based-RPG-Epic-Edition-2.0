@@ -14,6 +14,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Enemies
         public override int Health { get; set; } = 5;
         public override int Damage { get; set; } = 1;
         public override int CoinDrop { get; set; } = Rand.Next(3, 5);
+        public override int ExperienceDrop { get; set; } = Rand.Next(1, 3);
         
         Encounters ecounters = new Encounters();
         public override void StartBattle()

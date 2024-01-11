@@ -137,7 +137,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
                 DialogueSettings.GodColorChange();
                 Console.WriteLine("You're finally done with the enemy, took you long enough!");
                 DialogueSettings.Clear();
-                if (Program.CurrentPlayer.health == 100)
+                if (Program.CurrentPlayer.Health == 100)
                 {
                     DialogueSettings.GodColorChange();
                     Console.WriteLine("You really did that without taking any damage impressive.");
@@ -151,7 +151,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
                     Console.WriteLine("*You feel warm feeling flow throughout your body*");
                     DialogueSettings.Clear();
                     DialogueSettings.GodColorChange();
-                    Program.CurrentPlayer.health = 100;
+                    Program.CurrentPlayer.Health = 100;
                     Console.WriteLine("I gave you some health back. If you do this bad out there you'll die");
                     DialogueSettings.Clear();
                 }
@@ -177,7 +177,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
                 dummy.StartBattle();
                 Console.WriteLine("???: You're finally done with the enemy, took you long enough!");
                 DialogueSettings.Clear();
-                if (Program.CurrentPlayer.health == 100)
+                if (Program.CurrentPlayer.Health == 100)
                 {
                     Console.WriteLine("???: You really did that without taking any damage impressive.");
                     DialogueSettings.Clear();
@@ -188,7 +188,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Dialogue
                     DialogueSettings.Clear();
                     Console.WriteLine("*You feel warm feeling flow throughout your body*");
                     DialogueSettings.Clear();
-                    Program.CurrentPlayer.health = 100;
+                    Program.CurrentPlayer.Health = 100;
                     Console.WriteLine("???: I gave you some health back. If you do this bad out there you'll die");
                     DialogueSettings.Clear();
                 }

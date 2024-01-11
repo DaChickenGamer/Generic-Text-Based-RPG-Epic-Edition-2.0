@@ -13,6 +13,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Enemies
         public abstract int Health { get; set; }
         public abstract int Damage { get; set; }
         public abstract int CoinDrop { get; set; }
+        public abstract int ExperienceDrop { get; set; }
         public static Random Rand { get; set; } = new Random();
 
         public abstract void StartBattle();
@@ -23,8 +24,9 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Enemies
             if (Health >= 0)
             {
                 Console.WriteLine("You defeated a " + Name);
-                Player player = new Player();
-                player.coins += CoinDrop;
+                Program.CurrentPlayer.Coins += CoinDrop;
+                Program.CurrentPlayer.Experience += ExperienceDrop;
+                Program.CurrentPlayer.LevelUp();
             }
         }
     }

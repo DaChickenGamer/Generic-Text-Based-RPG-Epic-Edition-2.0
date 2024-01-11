@@ -11,7 +11,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
         public Player CurrentPlayer;
 
         public void FightStats(Enemy enemy)
-        {
+        { 
            CurrentEnemy = enemy;
            int currentMove = 0;
 
@@ -31,14 +31,14 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
 
                     Console.WriteLine("\n(A)ttack | (B)lock | (H)eal"); // Block has a chance to give an extra move
                     Program.CurrentPlayer.DisplayInfo();
-                    string Input = Console.ReadKey(true).Key.ToString().ToLower();
+                    string input = Console.ReadKey(true).Key.ToString().ToLower();
                     Console.Clear();
 
-                    if (Input == "a")
+                    if (input == "a")
                         Attack(CurrentEnemy);
-                    else if (Input == "h")
+                    else if (input == "h")
                         Heal(CurrentEnemy);
-                    else if (Input == "b")
+                    else if (input == "b")
                         Block(CurrentEnemy);
                     else
                     {
@@ -48,6 +48,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
 
                     DialogueSettings.showStats = true;
                 }
+                enemy.EnemyDeath();
             }
             else
             {
@@ -56,8 +57,8 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
         }
         public void Attack(Enemy enemy)
         {
-            int damage = Program.CurrentPlayer.damage;
-            int health = Program.CurrentPlayer.health;
+            int damage = Program.CurrentPlayer.Damage;
+            int health = Program.CurrentPlayer.Health;
 
             int enemyHealth = enemy.Health;
 
@@ -69,7 +70,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
                 Console.WriteLine(damage + " damage dealt!\n");
                 Console.WriteLine("The monster hit you for " + enemy.Damage + " damage!\n");
                 enemy.Health = enemy.Health - damage;
-                Program.CurrentPlayer.health = Program.CurrentPlayer.health - enemy.Damage;
+                Program.CurrentPlayer.Health = Program.CurrentPlayer.Health - enemy.Damage;
 
             }
             else if (rand > 5 && rand < 11) // Success but enemy misses
@@ -83,7 +84,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
             {
                 Console.WriteLine("\nYou missed the monster!");
                 Console.WriteLine("You were hit for " + enemy.Damage + "!\n");
-                Program.CurrentPlayer.health = Program.CurrentPlayer.health - enemy.Damage;
+                Program.CurrentPlayer.Health = Program.CurrentPlayer.Health - enemy.Damage;
             }
             else if (rand == 13)  // Both Miss
             {
@@ -92,8 +93,8 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
         }
         public void Heal(Enemy enemy)
         {
-            int damage = Program.CurrentPlayer.damage;
-            int health = Program.CurrentPlayer.health;
+            int damage = Program.CurrentPlayer.Damage;
+            int health = Program.CurrentPlayer.Health;
 
             Random random = new Random();
             int healAmount = 1;
@@ -122,8 +123,8 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
         }
         public void Block(Enemy enemy)
         {
-            int damage = Program.CurrentPlayer.damage;
-            int health = Program.CurrentPlayer.health;
+            int damage = Program.CurrentPlayer.Damage;
+            int health = Program.CurrentPlayer.Health;
 
             Random random = new Random();
             int rand = random.Next(0,2);

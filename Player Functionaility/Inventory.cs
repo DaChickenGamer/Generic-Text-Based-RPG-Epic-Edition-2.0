@@ -24,9 +24,9 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
                 Console.WriteLine(i);
             }
         }
-        public void PrintItemInfo(int itemID) // Use for testing
+        public void PrintItemInfo(int itemId) // Use for testing
         {
-            Item itemToPrint = ItemDatabaseReference.itemDatabase.FirstOrDefault(item => item.ItemID == itemID);
+            Item itemToPrint = ItemDatabaseReference.itemDatabase.FirstOrDefault(item => item.ItemID == itemId);
             Console.WriteLine(itemToPrint.Name);
         }
         public void InitializeInventory()
@@ -42,39 +42,39 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
             EquipItem("Chestplate", 4);
             EquipItem("Leggings", 5);
         }
-        public void AddItem(int itemID, int quanity = 1)
+        public void AddItem(int itemId, int quantity = 1)
         {
-            if (inventory.ContainsKey(itemID) == false)
-                inventory.Add(itemID, quanity);
+            if (inventory.ContainsKey(itemId) == false)
+                inventory.Add(itemId, quantity);
             else
-                inventory.Add(itemID, inventory[itemID] + quanity);
+                inventory.Add(itemId, inventory[itemId] + quantity);
         }
-        public void RemoveItem(int itemID, int quanity = 1)
+        public void RemoveItem(int itemId, int quantity = 1)
         {
-            if (!inventory.ContainsKey(itemID))
+            if (!inventory.ContainsKey(itemId))
                 return;
-            inventory.Add(itemID, inventory[itemID] - quanity);
-            if (!(inventory[itemID] <= 0))
+            inventory.Add(itemId, inventory[itemId] - quantity);
+            if (!(inventory[itemId] <= 0))
                 return;
-            inventory.Remove(itemID);
+            inventory.Remove(itemId);
         }
-        public void EquipItem(string itemType, int itemID)
+        public void EquipItem(string itemType, int itemId)
         {
-            if (!inventory.ContainsKey(itemID))
+            if (!inventory.ContainsKey(itemId))
                 return;
             switch (itemType.ToLower())
             {
                 case "helmet":
-                    currentlyEquippedHelmet = itemID;
+                    currentlyEquippedHelmet = itemId;
                     break;
                 case "chestplate":
-                    currentlyEquippedChestplate = itemID;
+                    currentlyEquippedChestplate = itemId;
                     break;
                 case "leggings":
-                    currentlyEquippedLeggings = itemID;
+                    currentlyEquippedLeggings = itemId;
                     break;
                 case "item":
-                    currentlySelectedItem = itemID;
+                    currentlySelectedItem = itemId;
                     break;
                 default:
                     throw new Exception($"Can't equip item type {itemType}");

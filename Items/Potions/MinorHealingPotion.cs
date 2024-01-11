@@ -16,7 +16,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Items
 
         public override void PotionFunction()
         {
-            Program.CurrentPlayer.health += 5;
+            Program.CurrentPlayer.Health += 5;
         }
     }
 }
