@@ -34,11 +34,19 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
         {
             Console.WriteLine("---------------------------------");
             Console.WriteLine("Current Level: " + Level);
+            Console.WriteLine("Experience: " + Experience + "/" + _experienceToLevelUp);
             Console.WriteLine("Current Health: " + Health + "/" + MaxHealth);
             Console.WriteLine("Current Defense: " + Defense);
             Console.WriteLine("Current Damage: " + Damage + " Multiplyer: " + Multiplyer);
             Console.WriteLine("Coins: " + Coins);
-            Console.WriteLine("---------------------------------");
+            Console.WriteLine("Equipped:");
+            Console.WriteLine(" Item: " + Program.CurrentInventory.PrintItemName("item"));
+            Console.WriteLine(" Helmet: " + Program.CurrentInventory.PrintItemName("helmet"));
+            Console.WriteLine(" Chestplate: " + Program.CurrentInventory.PrintItemName("chestplate"));
+            Console.WriteLine(" Leggings: " + Program.CurrentInventory.PrintItemName("leggings"));
+            Console.Write("Inventory: ");
+            Program.CurrentInventory.PrintInventory();
+            Console.WriteLine("\n---------------------------------");
         }
         private int _experienceToLevelUp = 100;
         // Come up with rewards for leveling up

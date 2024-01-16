@@ -10,7 +10,7 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0.Items
     {
         public override int ItemID { get; set; } = 2;
 
-        public override string Name { get; set; } = "Basic Sword";
+        public override string Name { get; set; } = "Minor Healing Potion";
 
         public override float TurnDuration { get; set; } = 0;
 

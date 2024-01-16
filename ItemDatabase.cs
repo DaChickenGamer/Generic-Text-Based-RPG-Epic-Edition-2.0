@@ -13,18 +13,13 @@ namespace Generic_Text_Based_RPG_Epic_Edition_2._0
 {
     internal class ItemDatabase
     {
-        public List<Item> itemDatabase;
-
-        public ItemDatabase()
+        public List<Item> itemDatabase = new List<Item>
         {
-            itemDatabase = new List<Item>
-            {
-                new BasicSword(),
-                new ModernHat(),
-                new ModernTShirt(),
-                new ModernLeggings(),
-                new MinorHealingPotion(),
-            };
-        }
+            new BasicSword(),
+            new ModernHat(),
+            new ModernTShirt(),
+            new ModernLeggings(),
+            new MinorHealingPotion(),
+        };
     }
 }
