@@ -62,16 +62,16 @@
     <Compile Include="Items\Armors\Leggings\ModernLeggings.cs" />
     <Compile Include="Items\Potions\MinorHealingPotion.cs" />
     <Compile Include="Items\Weapons\BasicSword.cs" />
+    <Compile Include="Land\LandGeneration.cs" />
+    <Compile Include="Land\Towns\Blacksmith.cs" />
+    <Compile Include="Land\Towns\NPCS.cs" />
+    <Compile Include="Land\Towns\Quest.cs" />
+    <Compile Include="Land\Towns\Shop.cs" />
     <Compile Include="Player Functionaility\Inventory.cs" />
     <Compile Include="Player Functionaility\Player.cs" />
     <Compile Include="Player Functionaility\StatsUpdate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Towns\Blacksmith.cs" />
-    <Compile Include="Towns\NPCS.cs" />
-    <Compile Include="Towns\Quest.cs" />
-    <Compile Include="Towns\Shop.cs" />
-    <Compile Include="Towns\TownData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
